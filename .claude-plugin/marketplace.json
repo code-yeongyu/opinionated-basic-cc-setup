@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "opinionated-basic-cc-setup",
-      "source": ".",
+      "source": "./",
       "description": "Opinionated basic Claude Code setup with intelligent context injection, language-specific guides, project knowledge, and encoding validation",
       "version": "1.0.0",
       "author": {
