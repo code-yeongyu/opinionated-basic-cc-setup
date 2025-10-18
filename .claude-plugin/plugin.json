@@ -16,5 +16,6 @@
     "project-knowledge",
     "hooks",
     "validation"
-  ]
+  ],
+  "hooks": "./hooks/hooks.json"
 }
