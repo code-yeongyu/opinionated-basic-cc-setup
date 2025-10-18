@@ -563,22 +563,17 @@ Delete server entry from `.mcp.json`
 
 ## Installation
 
-### Quick Start
+Install via Claude Code marketplace:
 
 ```bash
-# Clone to Claude Code plugins directory
-git clone https://github.com/code-yeongyu/opinionated-basic-cc-setup \
-    ~/.claude/plugins/opinionated-basic-cc-setup
+# Add marketplace
+/plugin marketplace add code-yeongyu/opinionated-basic-cc-setup
+
+# Install plugin
+/plugin install opinionated-basic-cc-setup
 ```
 
-### Verify Installation
-
-```bash
-ls ~/.claude/plugins/opinionated-basic-cc-setup/
-# Should see: .claude-plugin/, hooks/, modular-prompts/, .mcp.json
-```
-
-Restart Claude Code. The plugin will automatically activate.
+The plugin will automatically activate after installation. You may need to restart Claude Code.
 
 ---
 

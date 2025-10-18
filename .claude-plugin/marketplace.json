@@ -1,0 +1,39 @@
+{
+  "name": "opinionated-basic-cc-setup",
+  "owner": {
+    "name": "YeonGyu-Kim",
+    "email": "code.yeon.gyu@gmail.com"
+  },
+  "metadata": {
+    "description": "Production-tested Claude Code plugin with intelligent context injection, language-specific guides, and project knowledge management",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "opinionated-basic-cc-setup",
+      "source": ".",
+      "description": "Opinionated basic Claude Code setup with intelligent context injection, language-specific guides, project knowledge, and encoding validation",
+      "version": "1.0.0",
+      "author": {
+        "name": "YeonGyu-Kim",
+        "email": "code.yeon.gyu@gmail.com"
+      },
+      "homepage": "https://github.com/code-yeongyu/opinionated-basic-cc-setup",
+      "repository": "https://github.com/code-yeongyu/opinionated-basic-cc-setup",
+      "license": "MIT",
+      "keywords": [
+        "enhanced-basic",
+        "context-injection",
+        "language-guides",
+        "project-knowledge",
+        "hooks",
+        "validation",
+        "python",
+        "svelte",
+        "typescript",
+        "static-analysis"
+      ],
+      "category": "productivity"
+    }
+  ]
+}

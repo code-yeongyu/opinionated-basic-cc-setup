@@ -563,22 +563,17 @@ If you believe all tasks are done, mark them as 'completed' using TodoWrite.
 
 ## 설치
 
-### 빠른 시작
+Claude Code 내에서 마켓플레이스를 통해 설치합니다:
 
 ```bash
-# Claude Code 플러그인 디렉토리에 클론
-git clone https://github.com/code-yeongyu/opinionated-basic-cc-setup \
-    ~/.claude/plugins/opinionated-basic-cc-setup
+# 마켓플레이스 추가
+/plugin marketplace add code-yeongyu/opinionated-basic-cc-setup
+
+# 플러그인 설치
+/plugin install opinionated-basic-cc-setup
 ```
 
-### 설치 확인
-
-```bash
-ls ~/.claude/plugins/opinionated-basic-cc-setup/
-# 보여야 할 것: .claude-plugin/, hooks/, modular-prompts/, .mcp.json
-```
-
-Claude Code를 재시작하면 플러그인이 자동으로 활성화됩니다.
+설치가 완료되면 플러그인이 자동으로 활성화됩니다. Claude Code 재시작이 필요할 수 있습니다.
 
 ---
 
