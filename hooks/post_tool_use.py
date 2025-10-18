@@ -32,7 +32,7 @@ POST_TOOL_USE_CONFIG: list[HookMatcher] = [
         hooks=[
             HookCommand(
                 type="command",
-                command=f"{PLUGIN_ROOT}/hooks/post-tool-use/inject_language_guide.py",
+                command=f"uv run {PLUGIN_ROOT}/hooks/post-tool-use/inject_language_guide.py",
                 asyncable=False,
             ),
         ],
@@ -42,7 +42,7 @@ POST_TOOL_USE_CONFIG: list[HookMatcher] = [
         hooks=[
             HookCommand(
                 type="command",
-                command=f"{PLUGIN_ROOT}/hooks/post-tool-use/inject_knowledge.py",
+                command=f"uv run {PLUGIN_ROOT}/hooks/post-tool-use/inject_knowledge.py",
                 asyncable=False,
             ),
         ],
@@ -72,7 +72,7 @@ POST_TOOL_USE_CONFIG: list[HookMatcher] = [
         hooks=[
             HookCommand(
                 type="command",
-                command=f"{PLUGIN_ROOT}/hooks/post-tool-use/suggest_terminalcp_for_bash.py",
+                command=f"uv run {PLUGIN_ROOT}/hooks/post-tool-use/suggest_terminalcp_for_bash.py",
                 asyncable=True,
             ),
         ],
@@ -82,7 +82,7 @@ POST_TOOL_USE_CONFIG: list[HookMatcher] = [
         hooks=[
             HookCommand(
                 type="command",
-                command=f"{PLUGIN_ROOT}/hooks/post-tool-use/terminalcp_list_on_start.py",
+                command=f"uv run {PLUGIN_ROOT}/hooks/post-tool-use/terminalcp_list_on_start.py",
                 asyncable=True,
             ),
         ],
