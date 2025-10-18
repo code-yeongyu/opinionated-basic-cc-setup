@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "context7": {
+      "type": "stdio",
+      "command": "bunx",
+      "args": [
+        "--bun",
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "env": {}
+    },
+    "terminalcp": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@mariozechner/terminalcp@latest",
+        "--mcp"
+      ],
+      "env": {}
+    }
+  }
+}

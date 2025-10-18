@@ -2,52 +2,19 @@
   "name": "opinionated-basic-cc-setup",
   "version": "1.0.0",
   "description": "Opinionated basic Claude Code setup with intelligent context injection, language-specific guides, project knowledge, and encoding validation",
-  "author": "yeongyu",
+  "author": {
+    "name": "YeonGyu-Kim",
+    "email": "code.yeon.gyu@gmail.com"
+  },
+  "homepage": "https://github.com/code-yeongyu/opinionated-basic-cc-setup",
   "repository": "https://github.com/code-yeongyu/opinionated-basic-cc-setup",
   "license": "MIT",
-  "claudeCodeVersion": ">=0.1.0",
-  "hooks": {
-    "PostToolUse": [
-      {
-        "name": "inject_language_guide",
-        "script": "hooks/post-tool-use/inject_language_guide.py",
-        "description": "Automatically injects language-specific coding guides based on file extensions",
-        "triggers": ["Read", "Write", "Edit", "MultiEdit"],
-        "blocking": true
-      },
-      {
-        "name": "inject_knowledge",
-        "script": "hooks/post-tool-use/inject_knowledge.py",
-        "description": "Automatically injects project knowledge files (claude.md, agents.md) into context",
-        "triggers": ["Read", "Write", "Edit", "MultiEdit", "NotebookEdit"],
-        "blocking": true
-      },
-      {
-        "name": "check_corrupted_encoding",
-        "script": "hooks/post-tool-use/check_corrupted_encoding.py",
-        "description": "Validates file encoding and detects corruption issues",
-        "triggers": ["Write", "Edit", "MultiEdit", "NotebookEdit"],
-        "blocking": true
-      }
-    ]
-  },
-  "configuration": {
-    "modularPromptsDir": {
-      "type": "string",
-      "default": "modular-prompts/languages",
-      "description": "Directory containing language-specific guide markdown files"
-    },
-    "knowledgeFiles": {
-      "type": "array",
-      "default": ["claude.md", "agents.md"],
-      "description": "Knowledge files to search for and inject"
-    }
-  },
-  "files": [
-    "hooks/post-tool-use/inject_language_guide.py",
-    "hooks/post-tool-use/inject_knowledge.py",
-    "hooks/post-tool-use/check_corrupted_encoding.py",
-    "modular-prompts/languages/py.md",
-    "modular-prompts/languages/svelte.md"
+  "keywords": [
+    "enhanced-basic",
+    "context-injection",
+    "language-guides",
+    "project-knowledge",
+    "hooks",
+    "validation"
   ]
 }

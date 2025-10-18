@@ -6,7 +6,6 @@
 from __future__ import annotations
 
 import json
-import os
 import sys
 from pathlib import Path
 from typing import Any, NotRequired, TypedDict
@@ -39,20 +38,30 @@ class LanguageGuideChecker:
         self.cwd = Path(cwd)
         self.transcript_path = Path(transcript_path)
 
-        plugin_root = os.environ.get("CLAUDE_PLUGIN_ROOT")
-        if plugin_root:
-            self.modular_prompts_dir = Path(plugin_root) / "modular-prompts" / "languages"
-        else:
-            self.modular_prompts_dir = Path.home() / ".claude" / "modular-prompts" / "languages"
+        # Calculate plugin root: hooks/post-tool-use/inject_language_guide.py -> plugin root
+        self.plugin_root = Path(__file__).parent.parent.parent
+
+        # Define guide directories (priority order: global first, then plugin)
+        self.global_modular_prompts_dir = Path.home() / ".claude" / "modular-prompts" / "languages"
+        self.plugin_modular_prompts_dir = self.plugin_root / "modular-prompts" / "languages"
 
     def _get_guide_path(self, extension: str) -> Path | None:
         if not extension or not extension.startswith("."):
             return None
 
         guide_filename = f"{extension[1:]}.md"
-        guide_path = self.modular_prompts_dir / guide_filename
 
-        return guide_path if guide_path.exists() else None
+        # Priority 1: Check global ~/.claude/modular-prompts/languages/{ext}.md
+        global_guide = self.global_modular_prompts_dir / guide_filename
+        if global_guide.exists():
+            return global_guide
+
+        # Priority 2: Check plugin modular-prompts/languages/{ext}.md
+        plugin_guide = self.plugin_modular_prompts_dir / guide_filename
+        if plugin_guide.exists():
+            return plugin_guide
+
+        return None
 
     def _get_guide_content(self, guide_path: Path) -> str | None:
         if not guide_path.exists():

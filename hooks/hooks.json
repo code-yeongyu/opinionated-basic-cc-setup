@@ -1,0 +1,78 @@
+{
+  "PostToolUse": [
+    {
+      "blocking": true,
+      "description": "Automatically injects language-specific coding guides based on file extensions",
+      "name": "inject_language_guide",
+      "script": "${CLAUDE_PLUGIN_ROOT}/hooks/post-tool-use/inject_language_guide.py",
+      "triggers": [
+        "Read",
+        "Write",
+        "Edit",
+        "MultiEdit"
+      ]
+    },
+    {
+      "blocking": true,
+      "description": "Automatically injects project knowledge files (claude.md, agents.md) into context",
+      "name": "inject_knowledge",
+      "script": "${CLAUDE_PLUGIN_ROOT}/hooks/post-tool-use/inject_knowledge.py",
+      "triggers": [
+        "Read",
+        "Write",
+        "Edit",
+        "MultiEdit",
+        "NotebookEdit"
+      ]
+    },
+    {
+      "blocking": true,
+      "description": "Validates file encoding and detects corruption issues",
+      "name": "check_corrupted_encoding",
+      "script": "${CLAUDE_PLUGIN_ROOT}/hooks/post-tool-use/check_corrupted_encoding.py",
+      "triggers": [
+        "Write",
+        "Edit",
+        "MultiEdit",
+        "NotebookEdit"
+      ]
+    },
+    {
+      "blocking": true,
+      "description": "Execute language-specific static checkers (ruff, basedpyright, etc.)",
+      "name": "static_check",
+      "script": "${CLAUDE_PLUGIN_ROOT}/hooks/post-tool-use/static_check.py",
+      "triggers": [
+        "Write",
+        "Edit",
+        "MultiEdit"
+      ]
+    },
+    {
+      "blocking": true,
+      "description": "Suggest using terminalcp instead of Bash for interactive operations",
+      "name": "suggest_terminalcp_for_bash",
+      "script": "${CLAUDE_PLUGIN_ROOT}/hooks/post-tool-use/suggest_terminalcp_for_bash.py",
+      "triggers": [
+        "Bash"
+      ]
+    },
+    {
+      "blocking": true,
+      "description": "List active terminalcp sessions when a new session starts",
+      "name": "terminalcp_list_on_start",
+      "script": "${CLAUDE_PLUGIN_ROOT}/hooks/post-tool-use/terminalcp_list_on_start.py",
+      "triggers": [
+        "mcp__terminalcp__terminalcp"
+      ]
+    }
+  ],
+  "Stop": [
+    {
+      "blocking": true,
+      "description": "Block stopping when unresolved todos remain",
+      "name": "check_todos_completed",
+      "script": "${CLAUDE_PLUGIN_ROOT}/hooks/stop/check_todos_completed.py"
+    }
+  ]
+}
